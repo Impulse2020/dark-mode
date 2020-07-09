@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useLocalStorage = (key, initialvalue) => {
+export const useLocalStorage = (key, initialvalue) => {
     const [storedValue, setStoredValue] = useState(() => {
         const item = window.localStorage.getItem(key);
         return item ? JSON.parse(item) : initialvalue;
