@@ -2,7 +2,7 @@ import { useState } from "react";
 export const useLocalStorage = (key, value) => {
 
     const [storedValue, setStoredValue] = useState(() => {
-        const item = window.localStorageStorage.getItem(key);
+        const item = window.localStorage.getItem(key);
         return item ? JSON.parse(item) : value;
     });
 
@@ -12,6 +12,6 @@ export const useLocalStorage = (key, value) => {
 
     }
 
-    return [storedValue];
+    return [storedValue, setValue];
 
 }
